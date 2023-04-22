@@ -21,17 +21,9 @@ const registerUser = asyncHandler(async (req, res) => {
     const salt = await bcrypt.genSalt(10)
     const hashpassword = await bcrypt.hash(password, salt)
 
-    // const codes = '1122'
-    // const verifycode = await User.findOne({ code })
 
-    // if (!verifycode) {
-    //     res.status(400)
-    //     throw new Error("enter user code")
-    // }
 
-    if (code) {
 
-    }
     if (code && code !== process.env.CODE) {
         res.status(400)
         throw new Error("Invalid code")
